@@ -29130,9 +29130,7 @@ function (_Component) {
       }, _react.default.createElement("img", {
         className: "logo",
         src: _logo.default
-      }), _react.default.createElement("br", null), _react.default.createElement("div", {
-        className: "title"
-      }, "B Chain"), _react.default.createElement("br", null), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
+      }), _react.default.createElement("br", null), _react.default.createElement("div", null, "Welcome to the blockchain..."), _react.default.createElement("br", null), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
         to: "/blocks"
       }, "Blocks")), _react.default.createElement("div", null, _react.default.createElement(_reactRouterDom.Link, {
         to: "/conduct-transaction"
@@ -47706,7 +47704,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63511" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51188" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
