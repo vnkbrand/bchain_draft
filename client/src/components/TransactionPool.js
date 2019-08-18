@@ -1,11 +1,10 @@
-import React, {Component } from 'react';
+import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Transaction from './Transaction';
 import { Link } from 'react-router-dom';
 import history from '../history';
 
-// Ensure the transaction pool takes in all new txn's that have been added to the pool by the network
-const POLL_INTERVAL_MS = 10000;
+const POLL_INERVAL_MS = 10000;
 
 class TransactionPool extends Component {
   state = { transactionPoolMap: {} };
@@ -23,7 +22,7 @@ class TransactionPool extends Component {
           alert('success');
           history.push('/blocks');
         } else {
-          alert('The mine-transactions block did not complete.');
+          alert('The mine-transactions block request did not complete.');
         }
       });
   }
@@ -33,7 +32,7 @@ class TransactionPool extends Component {
 
     this.fetchPoolMapInterval = setInterval(
       () => this.fetchTransactionPoolMap(),
-      POLL_INTERVAL_MS
+      POLL_INERVAL_MS
     );
   }
 

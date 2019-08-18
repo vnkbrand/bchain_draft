@@ -15,7 +15,7 @@ class Block extends Component {
     const stringifiedData = JSON.stringify(data);
 
     const dataDisplay = stringifiedData.length > 35 ?
-      `${stringifiedData.substring(0, 15)}...` :
+      `${stringifiedData.substring(0, 35)}...` :
       stringifiedData;
 
     if (this.state.displayTransaction) {
@@ -25,14 +25,14 @@ class Block extends Component {
             data.map(transaction => (
               <div key={transaction.id}>
                 <hr />
-                <Transaction transaction={transaction}/>
+                <Transaction transaction={transaction} />
               </div>
             ))
           }
           <br />
-          <Button 
-            bsStyle="danger" 
-            bsSize="small" 
+          <Button
+            bsStyle="danger"
+            bsSize="small"
             onClick={this.toggleTransaction}
           >
             Show Less
@@ -44,30 +44,29 @@ class Block extends Component {
     return (
       <div>
         <div>Data: {dataDisplay}</div>
-        <Button 
-          bsStyle="danger" 
-          bsSize="small" 
-          onClick={this.toggleTransaction}>
+        <Button
+          bsStyle="danger"
+          bsSize="small"
+          onClick={this.toggleTransaction}
+        >
           Show More
         </Button>
       </div>
-    ); 
+    );
   }
 
   render() {
-    console.log('this.displayTransaction', this.displayTransaction);
-
     const { timestamp, hash } = this.props.block;
 
     const hashDisplay = `${hash.substring(0, 15)}...`;
 
-      return (
-        <div className="Block">
-          <div>Hash: {hashDisplay}</div>
-          <div>Timestamp: {new Date(timestamp).toLocaleString()}</div>
-          {this.displayTransaction}
-        </div>
-      )
+    return (
+      <div className='Block'>
+        <div>Hash: {hashDisplay}</div>
+        <div>Timestamp: {new Date(timestamp).toLocaleString()}</div>
+        {this.displayTransaction}
+      </div>
+    );
   }
 };
 
